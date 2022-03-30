@@ -1,14 +1,40 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Fibonacci {
-public static void main(String[] args) {
-    int n;
-    Scanner sc = new Scanner(System.in);
-    System.out.println("Enter number of element: ");
-    n = sc.nextInt();
-    for (int i = 0; i < n; i++) {
-        System.out.print(fibonacci(i) + " ");
+    static Scanner sc = new Scanner(System.in);
+public static int checkInputInt() {
+    while (true) {
+        try {
+            int result = Integer.parseInt(sc.nextLine());
+            if (result <= 0) {
+                throw  new NumberFormatException();
+            }
+            return result;
+        } catch (NumberFormatException e) {
+            System.err.println("Input must be digit.");
+            System.out.println("Please try again.");
+        }
     }
+}
+
+public static int checkInputNumber() {
+        System.out.println("Enter number of element: ");
+        int n = checkInputInt();
+        return n;
+    }
+
+public static void main(String[] args) {
+    ArrayList<Integer> arr = new ArrayList<>();
+    int n = checkInputNumber();
+//    int n;
+//    Scanner sc = new Scanner(System.in);
+//    System.out.println("Enter number of element: ");
+//    n = sc.nextInt();
+    for (int i = 0; i < n; i++) {
+        arr.add(fibonacci(i));
+    }
+    System.out.print(arr);
 }
 
 // Không dùng đệ quy

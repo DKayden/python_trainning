@@ -1,5 +1,5 @@
 
-from operator import itemgetter
+from operator import attrgetter, itemgetter
 
 
 def check_input_string():

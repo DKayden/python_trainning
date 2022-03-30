@@ -1,5 +1,5 @@
 # Không dùng dệ quy
-# def fibonancci(n):
+# def  fibonacci(n):
 #     a = 0
 #     b = 1
 #     c = 1
@@ -17,20 +17,21 @@
 
 
 #Dùng đệ quy
-def fibonancci(n):
+def  fibonacci(n):
     if n < 0:
         return -1
     elif n == 0 or n == 1:
         return n
     else:
-        return fibonancci(n -1) + fibonancci(n -2)
+        return  fibonacci(n -1) +  fibonacci(n -2)
 
-
+arr = []
 while True:
     try:
         n = int(input('Enter number of element: '))
         for i in range (0,n):
-            print(fibonancci(i))
+            arr.append(fibonacci(i))
+        print(arr)
         break
     except ValueError:
         print('Please enter a number')

@@ -1,16 +1,8 @@
 
 from operator import itemgetter
-import Person
 
 
-class PersonWrapper:
-    p = Person
-
-    def __init__(self,p):
-        self.p = p
-
-
-def checkInputString():
+def check_input_string():
     while True:
         result = input()
         if not result:
@@ -19,7 +11,7 @@ def checkInputString():
             return result
 
 
-def checkInputSalary():
+def check_input_salary():
     while True:
         try:
             result = float(input())
@@ -32,7 +24,7 @@ def checkInputSalary():
             print('Please input salary: ')
 
 
-def checkInputInt():
+def check_input_int():
     while True:
         try:
             result = int(input())
@@ -43,33 +35,30 @@ def checkInputInt():
             print('Input must be digit.')
 
 
-def checkInputNumber():
+def check_input_number():
     print("Enter Number")
-    number = checkInputInt()
+    number = check_input_int()
     return number
 
 
-def inputPersonInfo():
+def input_person_info():
     persons = []
     print('Enter Name: ')
-    name = checkInputString()
+    name = check_input_string()
     persons.append(name)
     print('Enter Address: ')
-    address = checkInputString()
+    address = check_input_string()
     persons.append(address)
     print('Enter Salary: ')
-    salary = checkInputSalary()
+    salary = check_input_salary()
     persons.append(salary)
     return persons
 
 
-def getSalary(Person):
-    return Person.salary
-
-n = checkInputNumber()
+n = check_input_number()
 persons = []
 for i in range (0,n):
-    persons.append(inputPersonInfo())
+    persons.append(input_person_info())
 
 print('Before sort:')
 

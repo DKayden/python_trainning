@@ -1,6 +1,5 @@
 
-from operator import attrgetter, itemgetter
-from pickle import TRUE
+from operator import itemgetter
 import Person
 
 
@@ -51,31 +50,31 @@ def checkInputNumber():
 
 
 def inputPersonInfo():
-    Person = []
+    persons = []
     print('Enter Name: ')
     name = checkInputString()
-    Person.append(name)
+    persons.append(name)
     print('Enter Address: ')
     address = checkInputString()
-    Person.append(address)
+    persons.append(address)
     print('Enter Salary: ')
     salary = checkInputSalary()
-    Person.append(salary)
-    return Person
+    persons.append(salary)
+    return persons
 
 
 def getSalary(Person):
-    p = Person
-    return p.salary
+    return Person.salary
 
 n = checkInputNumber()
-# print(n)
-# inputPersonInfo()
 persons = []
-
-for i in range(0,n):
+for i in range (0,n):
     persons.append(inputPersonInfo())
+
+print('Before sort:')
+
 print(persons)
-print('Sorted person by salary:\n')
-# persons.sort(key = getSalary)
-sorted(persons, key=attrgetter('salary'),reverse=False)
+
+print('Sorted person by salary:')
+
+print(sorted(persons, key=itemgetter(2)))
